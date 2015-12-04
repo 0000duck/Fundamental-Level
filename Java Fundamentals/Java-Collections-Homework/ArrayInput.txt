@@ -1,0 +1,1 @@
+int[] array = Arrays.asList(in.nextLine().split(" ")).stream().mapToInt(Integer::parseInt).toArray();

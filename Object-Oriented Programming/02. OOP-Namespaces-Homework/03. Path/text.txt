@@ -1,0 +1,6 @@
+?Homogeneous coordinates of POINTS and LINES
+Both POINTS and LINES can be represented as triples of numbers, not all zero: (x, y, z) for a POINT and [a, b, c] for a plane. 
+For example, (a, b, c) represents the POINT (i.e. the line) connecting (0, 0, 0) with (1, 4, 5); and, [2, 4, 5] represents the LINE (i.e. the plane) with equation 2x + 4y + 5z = 0. Notice that the POINT (a, b, c) is contained in the LINE [x, y, z] exactly if ax + by + cz = 0.
+There is an aspect of these so-called homogeneous coordinates that takes some getting used to. To illustrate, notice that (1, 2, 1), (3, 6, 3) and (-5, -10, -5) are all points on the same POINT. So, each of these triples represent this same POINT. 
+The same is true for LINES - for example, [2, 3, 2] and [4, 6, 4] represent the same LINE. But there is no need to panic: this ambiguity is of the same type as appears in fractions, happily dealt with in primary school; for example, the fractions 2/3, 4/6, and 14/21 are all the one and same number.
+Now, here is your final test question: use homogeneous coordinates to find the line connecting the points (1, 5, 2) and (?3, 7, 2). Here is a cross product calculator in case you need it, and here is the answer to your test question.
