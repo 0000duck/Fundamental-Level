@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. CustomLINQExtensionMethods", "01. CustomLINQExtensionMethods\01. CustomLINQExtensionMethods.csproj", "{0F570875-3C35-4826-A790-80A2E49EDEC4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. InterestCalculator", "02. InterestCalculator\02. InterestCalculator.csproj", "{540B2118-FD60-46FB-A5B9-25D6D6B38D05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. AsynchronousTimer", "03. AsynchronousTimer\03. AsynchronousTimer.csproj", "{328BED6E-050C-4368-99C8-E63F6E36417C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04. StudentClass", "04. StudentClass\04. StudentClass.csproj", "{8179AF66-A2F0-4C33-BF2B-2FD8A2F655B5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0F570875-3C35-4826-A790-80A2E49EDEC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F570875-3C35-4826-A790-80A2E49EDEC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F570875-3C35-4826-A790-80A2E49EDEC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F570875-3C35-4826-A790-80A2E49EDEC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{540B2118-FD60-46FB-A5B9-25D6D6B38D05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{540B2118-FD60-46FB-A5B9-25D6D6B38D05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{540B2118-FD60-46FB-A5B9-25D6D6B38D05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{540B2118-FD60-46FB-A5B9-25D6D6B38D05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{328BED6E-050C-4368-99C8-E63F6E36417C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{328BED6E-050C-4368-99C8-E63F6E36417C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{328BED6E-050C-4368-99C8-E63F6E36417C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{328BED6E-050C-4368-99C8-E63F6E36417C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8179AF66-A2F0-4C33-BF2B-2FD8A2F655B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8179AF66-A2F0-4C33-BF2B-2FD8A2F655B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8179AF66-A2F0-4C33-BF2B-2FD8A2F655B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8179AF66-A2F0-4C33-BF2B-2FD8A2F655B5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

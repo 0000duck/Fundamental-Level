@@ -1,0 +1,21 @@
+﻿namespace WebPage.Core.ViewEngine
+{
+    using System;
+    using Interfaces;
+
+    public class ViewResult : IViewResult
+    {
+
+        public ViewResult(string viewFullQualifedName)
+        {
+            this.Action =
+                (IRenderable)Activator.CreateInstance(Type.GetType(viewFullQualifedName));
+        }
+        public void Invoke()
+        {
+            this.Action.Render();
+        }
+
+        public IRenderable Action { get; set; }
+    }
+}
