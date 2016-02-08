@@ -1,0 +1,201 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>StringExtensions</name>
+    </assembly>
+    <members>
+        <member name="T:StringExtensions.StringExtensions">
+            <summary>
+            The string extensions
+            </summary>
+        </member>
+        <member name="M:StringExtensions.StringExtensions.ToMd5Hash(System.String)">
+            <summary>
+            The to md 5 hash
+            </summary>
+            <param name="input">
+            The input
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:StringExtensions.StringExtensions.ToBoolean(System.String)">
+            <summary>
+            The to boolean
+            </summary>
+            <param name="input">
+            The input
+            </param>
+            <returns>
+            The <see cref="T:System.Boolean"/>.
+            </returns>
+        </member>
+        <member name="M:StringExtensions.StringExtensions.ToShort(System.String)">
+            <summary>
+            The to short
+            </summary>
+            <param name="input">
+            The input
+            </param>
+            <returns>
+            The <see cref="T:System.Int16"/>.
+            </returns>
+        </member>
+        <member name="M:StringExtensions.StringExtensions.ToInteger(System.String)">
+            <summary>
+            The to integer
+            </summary>
+            <param name="input">
+            The input
+            </param>
+            <returns>
+            The <see cref="T:System.Int32"/>.
+            </returns>
+        </member>
+        <member name="M:StringExtensions.StringExtensions.ToLong(System.String)">
+            <summary>
+            The to long
+            </summary>
+            <param name="input">
+            The input
+            </param>
+            <returns>
+            The <see cref="T:System.Int64"/>.
+            </returns>
+        </member>
+        <member name="M:StringExtensions.StringExtensions.ToDateTime(System.String)">
+            <summary>
+            The to DateTime
+            </summary>
+            <param name="input">
+            The input
+            </param>
+            <returns>
+            The <see cref="T:System.DateTime"/>.
+            </returns>
+        </member>
+        <member name="M:StringExtensions.StringExtensions.CapitalizeFirstLetter(System.String)">
+            <summary>
+            Capitalizing first letters of every word in the given text.
+            </summary>
+            <param name="input">
+            The input text
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:StringExtensions.StringExtensions.GetStringBetween(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            Returns the string between the given range.
+            </summary>
+            <param name="input">
+            The input text
+            </param>
+            <param name="startString">
+            Start of the string
+            </param>
+            <param name="endString">
+            End of the string
+            </param>
+            <param name="startFrom">
+            The start from
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:StringExtensions.StringExtensions.ConvertCyrillicToLatinLetters(System.String)">
+            <summary>
+            Converts cyrillic to latin letters.
+            </summary>
+            <param name="input">
+            The input text
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:StringExtensions.StringExtensions.ConvertLatinToCyrillicKeyboard(System.String)">
+            <summary>
+            Converts latin to cyrillic letters.
+            </summary>
+            <param name="input">
+            The input text.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:StringExtensions.StringExtensions.ToValidUsername(System.String)">
+            <summary>
+            Validates username.
+            </summary>
+            <param name="input">
+            The input username
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:StringExtensions.StringExtensions.ToValidLatinFileName(System.String)">
+            <summary>
+            Validates latin file name.
+            </summary>
+            <param name="input">
+            The input file name
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:StringExtensions.StringExtensions.GetFirstCharacters(System.String,System.Int32)">
+            <summary>
+            Gets the first N characters of a given string.
+            </summary>
+            <param name="input">
+            The input string.
+            </param>
+            <param name="charsCount">
+            Number of characters.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:StringExtensions.StringExtensions.GetFileExtension(System.String)">
+            <summary>
+            Gets the file extension
+            </summary>
+            <param name="fileName">
+            Name of the file.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:StringExtensions.StringExtensions.ToContentType(System.String)">
+            <summary>
+            Replaces extension to content type.
+            </summary>
+            <param name="fileExtension">
+            File extension.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:StringExtensions.StringExtensions.ToByteArray(System.String)">
+            <summary>
+            Converts the string to byte array.
+            </summary>
+            <param name="input">
+            The input string.
+            </param>
+            <returns>
+            The byte array
+            </returns>
+        </member>
+    </members>
+</doc>

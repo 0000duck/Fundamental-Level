@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Capitalism</name>
+    </assembly>
+    <members>
+        <member name="P:Capitalism.Interfaces.IDatabase.Companies">
+            <summary>
+            Collection of companies.
+            </summary>
+        </member>
+        <member name="P:Capitalism.Interfaces.IDatabase.TotalSalaries">
+            <summary>
+            Collection of total salaries of the employees.
+            </summary>
+        </member>
+        <member name="P:Capitalism.Interfaces.ICommand.Name">
+            <summary>
+            Property for the name of the command
+            </summary>
+        </member>
+        <member name="P:Capitalism.Interfaces.ICommand.Parameters">
+            <summary>
+            List for command parameters.
+            </summary>
+        </member>
+        <member name="M:Capitalism.Interfaces.ICommandExecutor.ExecuteCommand(Capitalism.Interfaces.ICommand)">
+            <summary>
+            Method for executing a command.
+            </summary>
+            <param name="command"></param>
+            <returns>
+            String
+            </returns>
+        </member>
+        <member name="M:Capitalism.Interfaces.IEngine.Run">
+            <summary>
+            Run method of the engine.
+            </summary>
+        </member>
+        <member name="M:Capitalism.Interfaces.IReader.ReadLine">
+            <summary>
+            Method for reading a line
+            </summary>
+            <returns>
+            The line read.
+            </returns>
+        </member>
+        <member name="M:Capitalism.Interfaces.IWriter.WriteLine(System.String)">
+            <summary>
+            Method for writing the info to the output.
+            </summary>
+            <param name="output">
+            String to be output.
+            </param>
+        </member>
+        <member name="M:Capitalism.Interfaces.IWriter.WriteLine(System.String,System.Object[])">
+            <summary>
+            Method for writing the info to the output.
+            </summary>
+            <param name="format">
+            Format of the text.
+            </param>
+            <param name="args">
+            Arguments
+            </param>
+        </member>
+        <member name="P:Capitalism.Models.Interfaces.IBoss.SubordinateEmployees">
+            <summary>
+            Collection of subordinate employees.
+            </summary>
+        </member>
+        <member name="P:Capitalism.Models.Interfaces.ICompanyStructure.Name">
+            <summary>
+            Name of the company
+            </summary>
+        </member>
+        <member name="P:Capitalism.Models.Interfaces.ICompanyStructure.Employees">
+            <summary>
+            Collection of employees
+            </summary>
+        </member>
+        <member name="P:Capitalism.Models.Interfaces.IEmployee.Department">
+            <summary>
+            Department of the employee
+            </summary>
+        </member>
+        <member name="P:Capitalism.Models.Interfaces.IEmployee.SalaryFactor">
+            <summary>
+            Salary calculation for the employee
+            </summary>
+        </member>
+        <member name="P:Capitalism.Models.Interfaces.IPaidPerson.Salary">
+            <summary>
+            Salary of the person
+            </summary>
+        </member>
+        <member name="P:Capitalism.Models.Interfaces.IPerson.FirstName">
+            <summary>
+            First name of the person
+            </summary>
+        </member>
+        <member name="P:Capitalism.Models.Interfaces.IPerson.LastName">
+            <summary>
+            Last name of the person
+            </summary>
+        </member>
+    </members>
+</doc>
