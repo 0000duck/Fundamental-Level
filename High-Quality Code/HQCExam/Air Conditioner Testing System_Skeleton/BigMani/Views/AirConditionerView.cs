@@ -64,8 +64,8 @@
                     case "FindAirConditioner":
                         this.ValidateParametersCount(command, 2);
                         ui.WriteLine(this.FindAirConditioner(
-                            command.Parameters[1],
-                            command.Parameters[0]));
+                            command.Parameters[0],
+                            command.Parameters[1]));
                         break;
 
                     case "FindReport":
@@ -123,11 +123,15 @@
         /// <returns>Registered Air Conditioner with Manufacturer and Model names.</returns>
         public string RegisterStationaryAirConditioner(string manufacturer, string model, string energyEfficiencyRating, int powerUsage)
         {
-            if (energyEfficiencyRating.ToCharArray()[0] < 'A' || energyEfficiencyRating.ToCharArray()[0] > 'E')
+            EnergyEfficiencyRating rating;
+            try
             {
-                throw new ArgumentException(Constants.Incorrectrating);
+                rating = (EnergyEfficiencyRating)Enum.Parse(typeof(EnergyEfficiencyRating), energyEfficiencyRating);
             }
-
+            catch (ArgumentException ex)
+            {
+                throw new ArgumentException(Constants.Incorrectrating, ex);
+            }
             if (manufacturer.Length < Constants.ManufacturerMinLength)
             {
                 throw new ArgumentException(string.Format(Constants.IncorrectPropertyLength, "Manufacturer", Constants.ManufacturerMinLength));
@@ -151,7 +155,7 @@
                 }
             }
 
-            AirConditioner airConditioner = new AirConditioner(manufacturer, model, energyEfficiencyRating, powerUsage);
+            AirConditioner airConditioner = new AirConditioner(manufacturer, model, rating, powerUsage);
             Controller.AirConditioners.Add(airConditioner);
 
             return string.Format(Constants.Register, airConditioner.Model, airConditioner.Manufacturer);
@@ -239,7 +243,6 @@
                 if (Controller.AirConditioners.Any(airCon => airCon.Manufacturer == manufacturer && airCon.Model == model))
                 {
                     AirConditioner airConditioner = Controller.GetAirConditioner(manufacturer, model);
-                    ///// airConditioner.energyRating += 5;
                     var mark = airConditioner.Test();
                     Controller.Reports.Add(new Report(airConditioner.Manufacturer, airConditioner.Model, mark));
                     return string.Format(Constants.Test, model, manufacturer);
@@ -257,12 +260,9 @@
         /// <returns>Returns the air conditioner if found.</returns>
         public string FindAirConditioner(string manufacturer, string model)
         {
-            if (Controller.GetAirConditionersCount() != 0)
+            if (!Controller.AirConditioners.Any(airCon => airCon.Manufacturer == manufacturer && airCon.Model == model))
             {
-                if (Controller.AirConditioners.Any(airCon => airCon.Manufacturer == manufacturer && airCon.Model == model))
-                {
-                    throw new NonExistantEntryException(Constants.Nonexist);
-                }
+                throw new NonExistantEntryException(Constants.Nonexist);
             }
 
             AirConditioner airConditioner = Controller.GetAirConditioner(manufacturer, model);
@@ -272,12 +272,9 @@
 
         public string FindReport(string manufacturer, string model)
         {
-            if (Controller.GetReportsCount() != 0)
+            if (!Controller.Reports.Any(rep => rep.Manufacturer == manufacturer && rep.Model == model))
             {
-                if (!Controller.Reports.Any(rep => rep.Manufacturer == manufacturer && rep.Model == model))
-                {
-                    throw new NonExistantEntryException(Constants.Nonexist);
-                }
+                throw new NonExistantEntryException(Constants.Nonexist);
             }
 
             Report report = Controller.GetReport(manufacturer, model);
@@ -300,7 +297,7 @@
                 return Constants.Noreports;
             }
 
-            reports = reports.OrderBy(x => x.Mark).ToList();
+            reports = reports.OrderBy(x => x.Model).ToList();
             StringBuilder reportsPrint = new StringBuilder();
             reportsPrint.AppendLine(string.Format("Reports from {0}:", manufacturer));
             reportsPrint.Append(string.Join(Environment.NewLine, reports));
@@ -317,6 +314,10 @@
         {
             int reports = Controller.GetReportsCount();
             double airConditioners = Controller.GetAirConditionersCount();
+            if (reports == 0)
+            {
+                return string.Format(Constants.Status, 0);
+            }
 
             double percent = reports / airConditioners;
             percent = percent * 100;

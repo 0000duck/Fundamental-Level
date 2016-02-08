@@ -6,6 +6,6 @@
         
         string Model { get; set; }
         
-        int Mark { get; set; } 
+        bool Mark { get; set; } 
     }
 }

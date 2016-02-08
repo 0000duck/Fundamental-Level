@@ -30,13 +30,13 @@
             expected.AppendLine("Report");
             expected.AppendLine("====================");
             expected.AppendLine("Manufacturer: Toshiba");
-            expected.AppendLine("Model: EX1000");
+            expected.AppendLine("Model: C60");
             expected.AppendLine("Mark: Passed");
             expected.AppendLine("====================");
             expected.AppendLine("Report");
             expected.AppendLine("====================");
             expected.AppendLine("Manufacturer: Toshiba");
-            expected.AppendLine("Model: C60");
+            expected.AppendLine("Model: EX1000");
             expected.AppendLine("Mark: Passed");
             expected.Append("====================");
 

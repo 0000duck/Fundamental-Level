@@ -9,8 +9,6 @@
 
         private string manufacturer;
 
-        private int energyRating;
-
         private int powerUsage;
 
         private int volumeCovered;
@@ -19,29 +17,11 @@
 
         private string type;
 
-        public AirConditioner(string manufacturer, string model, string energyEfficiencyRating, int powerUsage)
+        public AirConditioner(string manufacturer, string model, EnergyEfficiencyRating energyEfficiencyRating, int powerUsage)
         {
             this.Manufacturer = manufacturer;
             this.Model = model;
-            switch (energyEfficiencyRating)
-            {
-                case "A":
-                    this.energyRating = 10;
-                    break;
-                case "B":
-                    this.energyRating = 12;
-                    break;
-                case "C":
-                    this.energyRating = 15;
-                    break;
-                case "D":
-                    this.energyRating = 20;
-                    break;
-                case "E":
-                    this.energyRating = 90;
-                    break;
-            }
-
+            this.RequiredEnergyEfficiencyRating = energyEfficiencyRating;
             this.powerUsage = powerUsage;
             this.type = "stationary";
         }
@@ -62,6 +42,8 @@
             this.VolumeCovered = volumeCoverage;
             this.type = "car";
         }
+
+        public EnergyEfficiencyRating RequiredEnergyEfficiencyRating { get; set; }
 
         public string Model
         {
@@ -135,35 +117,53 @@
             }
         }
 
-        public int Test()
+        public int PowerUsage
+        {
+            get
+            {
+                return this.powerUsage;
+            }
+
+            set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentException(string.Format(Constants.Nonpositive, "Power Usage"));
+                }
+
+                this.powerUsage = value;
+            }
+        }
+
+        public bool Test()
         {
             if (this.type == "stationary")
             {
-                if (this.powerUsage / 100 <= this.energyRating)
+                if (this.PowerUsage <= (int)this.RequiredEnergyEfficiencyRating || this.RequiredEnergyEfficiencyRating == EnergyEfficiencyRating.E)
                 {
-                    return 1;
+                    return true;
                 }
             }
             else if (this.type == "car")
             {
                 double sqrtVolume = Math.Sqrt(this.volumeCovered);
-                if (sqrtVolume < 3)
+                if (sqrtVolume < Constants.MinCarVolume)
                 {
-                    return 1;
+                    return false;
                 }
 
-                return 2;
+                return true;
             }
             else if (this.type == "plane")
             {
                 double sqrtVolume = Math.Sqrt(this.volumeCovered);
-                if (this.ElectricityUsed / sqrtVolume < Constants.MinPlaneElectricity)
+                if ((this.ElectricityUsed / sqrtVolume) < Constants.MinPlaneElectricity)
                 {
-                    return 1;
+                    return true;
                 }
             }
 
-            return 0;
+            return false;
         }
 
         public override string ToString()
@@ -173,24 +173,7 @@
 
             if (this.type == "stationary")
             {
-                string energy = "A";
-                switch (this.energyRating)
-                {
-                    case 12:
-                        energy = "B";
-                        break;
-                    case 15:
-                        energy = "C";
-                        break;
-                    case 20:
-                        energy = "D";
-                        break;
-                    case 90:
-                        energy = "E";
-                        break;
-                }
-
-                print += "Required energy efficiency rating: " + energy + "\r\n" + "Power Usage(KW / h): " +
+                print += "Required energy efficiency rating: " + this.RequiredEnergyEfficiencyRating + "\r\n" + "Power Usage(KW / h): " +
                          this.powerUsage + "\r\n";
             }
             else if (this.type == "car")

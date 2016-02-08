@@ -22,7 +22,7 @@
 
         public const string Test = "Air Conditioner model {0} from {1} tested successfully.";
 
-        public const int ModelMinLength = 1;
+        public const int ModelMinLength = 2;
 
         public const int ManufacturerMinLength = 4;
 

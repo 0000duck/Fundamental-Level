@@ -54,7 +54,7 @@
 
             var result = view.Status();
 
-            Assert.AreEqual("Jobs complete: NaN%", result);
+            Assert.AreEqual("Jobs complete: 0,00%", result);
         }
     }
 }

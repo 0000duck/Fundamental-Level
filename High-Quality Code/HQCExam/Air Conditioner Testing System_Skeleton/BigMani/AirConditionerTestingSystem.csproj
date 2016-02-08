@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="AirConditionerTestingSystemMain.cs" />
     <Compile Include="Interfaces\IReport.cs" />
+    <Compile Include="Utilities\EnergyEfficiencyRating.cs" />
     <Compile Include="Views\AirConditionerView.cs" />
     <Compile Include="Infrastructure\Command.cs" />
     <Compile Include="Core\AirConditionerTestingSystemEngine.cs" />

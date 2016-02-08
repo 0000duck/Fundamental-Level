@@ -4,7 +4,7 @@
 
     public class Report : IReport
     {
-        public Report(string manufacturer, string model, int mark)
+        public Report(string manufacturer, string model, bool mark)
         {
             this.Manufacturer = manufacturer;
             this.Model = model;
@@ -15,16 +15,16 @@
 
         public string Model { get; set; }
 
-        public int Mark { get; set; }
+        public bool Mark { get; set; }
 
         public override string ToString()
         {
             string result = string.Empty;
-            if (this.Mark == 0)
+            if (!this.Mark)
             {
                 result = "Failed";
             }
-            else if (this.Mark == 1)
+            else if (this.Mark)
             {
                 result = "Passed";
             }
